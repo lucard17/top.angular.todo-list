@@ -36,7 +36,6 @@ button {
   width: 3rem;
   background: unset;
   flex: 0 0 3rem;
-  transition: 0.3s;
 }
 
 button:not(:disabled):hover {
@@ -72,10 +71,8 @@ button:not(:disabled):hover {
 }
 .todo-item {
   border-bottom: 1px solid transparent;
-  transition: border 0.3s;
   &.edit {
     border-bottom: 1px solid #5e5e5e;
-    transition: border 0.3s;
   }
   &__buttons-block {
     display: flex;
