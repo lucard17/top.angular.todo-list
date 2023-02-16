@@ -1,1 +1,121 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Mulish", sans-serif;
+  box-sizing: border-box;
+  outline: unset;
+  border: unset;
+  border-radius: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  width: 320px;
+  margin: auto;
+}
+
+input {
+  display: block;
+  height: 3rem;
+  font-size: 16px;
+  flex: 1 1 100%;
+  padding-left: 1rem;
+  min-width: 0;
+}
+
+input:disabled {
+  background-color: inherit;
+}
+
+button {
+  height: 3rem;
+  width: 3rem;
+  background: unset;
+  flex: 0 0 3rem;
+  transition: 0.3s;
+}
+
+button:not(:disabled):hover {
+  background-color: #f0f0f0;
+}
+
+.fa-solid {
+  font-size: 1.4em;
+}
+
+.todo-app {
+  width: 24rem;
+  margin: 1rem auto;
+}
+
+.todo-list {
+  min-height: 30rem;
+  border: 1px solid;
+  border-bottom-color: transparent;
+  padding: 1rem;
+  &__item {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1rem;
+
+  }
+}
+
+.todo-item__edit-button:not(.active) {
+  color: #5e5e5e;
+}
+.todo-item {
+  border-bottom: 1px solid transparent;
+  transition: border 0.3s;
+  &.edit {
+    border-bottom: 1px solid #5e5e5e;
+    transition: border 0.3s;
+  }
+  &__buttons-block {
+    display: flex;
+    overflow: hidden;
+    flex: 0 0 6rem;
+  }
+
+  &__button {
+    margin-left: 0;
+    margin-right: 0;
+    &:first-of-type:disabled {
+      margin-left: -3rem;
+    }
+
+    &:last-of-type:disabled {
+      margin-right: -3rem;
+    }
+  }
+  &.done input {
+     text-decoration: line-through;
+   }
+}
+
+.inputForm {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  overflow: hidden;
+  justify-content: space-between;
+  border: 1px solid;
+  padding: 1rem;
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%
+  }
+}
+
+.inputForm__input,
+.inputForm__button_add {
+  border-bottom: 1px solid #5e5e5e;
+}

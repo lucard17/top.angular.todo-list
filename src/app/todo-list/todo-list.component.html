@@ -1,0 +1,42 @@
+<div class="todo-list">
+  <app-todo-item
+    *ngFor=" let item of todoList"
+    [todoItem]="item"
+    (onChange)="onChangeHandle($event)"
+    (onComplete)="onCompleteHandle($event)"
+    (onDelete)="onDeleteHandle($event)"
+  >
+  </app-todo-item>
+</div>
+<div class="inputForm">
+  <div class="inputForm__row">
+    <input
+      class="inputForm__input"
+      type="text"
+      placeholder="Enter the text!)"
+      [(ngModel)]="formInput"
+    />
+    <button
+      class="inputForm__button"
+      type="button"
+      [disabled]="(formInput==='')"
+      (click)="addItemHandle()"
+    >
+      <i [className]="'fa-solid fa-plus'"></i>
+    </button>
+  </div>
+  <div class="inputForm__row">
+    <button type="button" (click)="undoHandle()" [disabled]="undoSteps==0">
+      <i [className]="'fa-solid fa-arrow-rotate-left'" ></i>
+    </button>
+    <button
+      [title]="'save to sessionStorage'"
+      type="button"
+      (click)="saveHandle()">
+      <i [className]="'fa-solid fa-floppy-disk'"></i>
+    </button>
+    <button type="button" (click)="redoHandle()" [disabled]="redoSteps==0">
+      <i [className]="'fa-solid fa-arrow-rotate-right'"></i>
+    </button>
+  </div>
+</div>

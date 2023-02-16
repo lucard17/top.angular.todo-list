@@ -1,0 +1,28 @@
+<div [className]="'todo-item'+(completed?' done':'')+(onEdit?' edit':'')">
+  <input type="text"
+         [disabled]="!onEdit"
+         class="todo-item__input"
+         [value]="title"
+         #title_text/>
+  <div class="todo-item__buttons-block">
+    <button type="button"
+            [className]="'todo-item__button todo-item__edit-button'+ (onEdit?' active':'')"
+            (click)="editHandle(title_text.value)"
+            [disabled]="completed">
+      <i [className]="'fa-solid fa-pen'"></i>
+    </button>
+    <button type="button"
+            class="todo-item__button"
+    (click) = "completedHandle()"
+    [disabled]="onEdit">
+      <i [className]="'fa-solid fa-check'"></i>
+    </button>
+    <button type="button"
+            class="todo-item__button"
+            (click)="deleteHandle()"
+            [disabled]="!completed">
+      <i [className]="'fa-solid fa-xmark'"></i>
+    </button>
+  </div>
+</div>
+
